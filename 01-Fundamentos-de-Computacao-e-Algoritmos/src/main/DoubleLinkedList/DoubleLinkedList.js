@@ -2,25 +2,37 @@ import { Node } from "./Node.js";
 
 export class DoubleLinkedList{
     
-    constructor(element){
-        this.tail = this.head = new Node(element);
-        this.size = 1;
+    constructor(){
+        this.tail = this.head = null
+        this.size = 0;
     }
 
     addFirst(element){
-        this.size++
         const newNode = new Node(element)
-        this.head.prev = newNode
-        newNode.next = this.head
-        this.head = newNode
+
+        if(this.size === 0){
+            this.head = this.tail = newNode
+        }else{
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+
+        this.size++
     }
 
     addLast(element){
-        this.size++
         const newNode = new Node(element)
-        this.tail.next = newNode
-        newNode.prev = this.tail
-        this.tail = newNode
+        
+        if(this.size === 0){
+            this.head = this.tail = newNode;
+        }else{
+            this.tail.next = newNode
+            newNode.prev = this.tail
+            this.tail = newNode
+        }
+        
+        this.size++
     }
 
     removeFirst(){
