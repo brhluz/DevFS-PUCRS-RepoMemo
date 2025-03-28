@@ -41,10 +41,10 @@ export class DoubleLinkedList{
         }else if(this.head === this.tail){
             this.head = this.tail = null
         }else{
-            this.size--
             this.head = this.head.next
             this.head.prev = null
         }
+        this.size--
     }
 
     removeLast(){
@@ -53,10 +53,33 @@ export class DoubleLinkedList{
         }else if(this.head === this.tail){
             this.head = this.tail = null
         }else{
-            this.size--
             this.tail = this.tail.prev
             this.tail.next = null
         }
+        this.size--
+    }
+
+    insertAfter(elementToInsert, elementToFind){
+        if(this.size===0){
+            return null
+        }
+
+        let node = this.find(elementToFind)
+
+        if(node==null){
+            return null
+        }
+        
+        if(this.head === node){
+            let newNode = Node(elementToInsert)
+            this.head.next = newNo
+        }
+
+        this.size++
+    }
+
+    insertBefore(){
+
     }
 
     find(element){
@@ -77,13 +100,30 @@ export class DoubleLinkedList{
 
     remove(element){
         let node = this.find(element)
-        if(node != null){
-            node.prev.next = node.next
-            node.next.prev = node.prev
-            node = null
-            return
+
+        if(node==null){
+            return null
         }
-        return null
+
+        if(this.head === node && this.tail === node){
+            this.head = this.tail = node = null
+        }else if(this.head === node){
+            this.head = node.next
+            this.head.prev = null
+            node = null
+        }else if(this.tail === node){
+            this.tail = node.prev
+            this.tail.next = null
+            node = null
+        }else{
+            node.next.prev = node.prev
+            node.prev.next = node.next
+            node = null
+        }
+
+        this.size--
+        return node.element
+        
     }
 
 }
