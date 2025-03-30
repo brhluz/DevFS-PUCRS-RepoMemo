@@ -150,4 +150,24 @@ export class DoubleLinkedList{
         
     }
 
+    toArray(){
+
+        let current = this.head
+        let msg = ""
+        while(current){
+            msg += `<- | ${current.element} | ->`
+            current = current.next
+        }
+        console.log("HEAD" + msg + "TAIL")
+    }
+
+    toReverseArray(){
+        let current = this.tail
+        let msg = ""
+        while(current){
+            msg += `<- | ${current.element} | ->`
+            current = current.prev
+        }
+        console.log("TAIL" + msg + "HEAD")
+    }
 }
