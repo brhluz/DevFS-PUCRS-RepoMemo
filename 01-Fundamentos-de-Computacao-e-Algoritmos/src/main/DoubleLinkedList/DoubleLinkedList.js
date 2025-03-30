@@ -146,7 +146,7 @@ export class DoubleLinkedList{
         }
 
         this.size--
-        return node.element
+        return element
         
     }
 
@@ -155,7 +155,7 @@ export class DoubleLinkedList{
         let current = this.head
         let msg = ""
         while(current){
-            msg += `<- | ${current.element} | ->`
+            msg += ` <- | ${current.element} | -> `
             current = current.next
         }
         console.log("HEAD" + msg + "TAIL")
@@ -165,7 +165,7 @@ export class DoubleLinkedList{
         let current = this.tail
         let msg = ""
         while(current){
-            msg += `<- | ${current.element} | ->`
+            msg += ` <- | ${current.element} | -> `
             current = current.prev
         }
         console.log("TAIL" + msg + "HEAD")
