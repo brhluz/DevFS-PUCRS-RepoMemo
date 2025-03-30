@@ -61,76 +61,48 @@ export class DoubleLinkedList{
 
     insertAfter(elementToInsert, elementToFind){
 
-        let newNode = null
-
-        if(this.size===0){
-            return null
-        }
-
-        let node = this.find(elementToFind)
-
-        if(node==null){
-            return elementToFind
-        }
+        if(this.size===0) return null
         
-        newNode = new Node(elementToInsert)
+        const node = this.find(elementToFind)
+        if(!node) return elementToFind;
+               
+        const newNode = new Node(elementToInsert)
         
-        if(this.head === node && this.tail === node){
-            this.head.next = newNode
-            newNode.prev = this.head
-            this.tail = newNode
-        }else if(this.head === node){
-            this.head.next.prev = newNode
-            this.head.next = newNode
-        }else if(this.tail === node){
-            this.tail.next = newNode
-            newNode.prev = this.tail
-            this.tail = newNode
-        }else{
-            node.next.prev = newNode
-            newNode.next = node.next
+        if(node === this.tail){
             node.next = newNode
             newNode.prev = node
+            this.tail = newNode
+        }else{
+            newNode.next = node.next
+            newNode.prev = node
+            node.next.prev = newNode
+            node.next = newNode
         }
 
         this.size++
-
         return newNode
     }
 
     insertBefore(elementToInsert, elementToFind){
-        
-        let newNode = null
-        
         if(this.size === 0) return null
 
-        let node = this.find(elementToFind)
+        const node = this.find(elementToFind)
+        if(!node) return elementToFind
 
-        if(node == null) return elementToFind
+        const newNode = new Node(elementToInsert)
 
-        newNode = new Node(elementToInsert)
-
-        if(this.head === node && this.tail === node){
-            this.head.prev = newNode
-            newNode.next = this.head
-            this.head = newNode
-        }else if(this.head === node){
-            this.head.prev = newNode
-            newNode.next = this.head
-            this.head = newNode
-        }else if(this.tail === node){
-            newNode.next = this.tail
-            this.tail.prev.next = newNode
-            this.tail.prev = newNode
-        }else{
-            node.prev.next = newNode
-            newNode.prev = node.prev
-            node.prev = newNode
+        if(node === this.head){
             newNode.next = node
+            node.prev = newNode
+            this.head = newNode
+        }else{
+            newNode.prev = node.prev
+            newNode.next = node
+            node.prev.next = newNode
+            node.prev = newNode
         }
 
         this.size++
-
         return newNode
     }
 
