@@ -60,6 +60,9 @@ export class DoubleLinkedList{
     }
 
     insertAfter(elementToInsert, elementToFind){
+
+        let newNode = null
+
         if(this.size===0){
             return null
         }
@@ -67,19 +70,68 @@ export class DoubleLinkedList{
         let node = this.find(elementToFind)
 
         if(node==null){
-            return null
+            return elementToFind
         }
         
-        if(this.head === node){
-            let newNode = Node(elementToInsert)
-            this.head.next = newNo
+        newNode = new Node(elementToInsert)
+        
+        if(this.head === node && this.tail === node){
+            this.head.next = newNode
+            newNode.prev = this.head
+            this.tail = newNode
+        }else if(this.head === node){
+            this.head.next.prev = newNode
+            this.head.next = newNode
+        }else if(this.tail === node){
+            this.tail.next = newNode
+            newNode.prev = this.tail
+            this.tail = newNode
+        }else{
+            node.next.prev = newNode
+            newNode.next = node.next
+            node.next = newNode
+            newNode.prev = node
         }
 
         this.size++
+
+        return newNode
     }
 
-    insertBefore(){
+    insertBefore(elementToInsert, elementToFind){
+        
+        let newNode = null
+        
+        if(this.size === 0) return null
 
+        let node = this.find(elementToFind)
+
+        if(node == null) return elementToFind
+
+        newNode = new Node(elementToInsert)
+
+        if(this.head === node && this.tail === node){
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }else if(this.head === node){
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }else if(this.tail === node){
+            newNode.next = this.tail
+            this.tail.prev.next = newNode
+            this.tail.prev = newNode
+        }else{
+            node.prev.next = newNode
+            newNode.prev = node.prev
+            node.prev = newNode
+            newNode.next = node
+        }
+
+        this.size++
+
+        return newNode
     }
 
     find(element){
