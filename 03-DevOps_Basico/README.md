@@ -1,5 +1,5 @@
 
-## 🛠️ Comandos Essenciais (Modo Tutorial)
+## 🛠️ Comandos Essenciais
 
 ### 🔧 Criando a imagem Docker
 
