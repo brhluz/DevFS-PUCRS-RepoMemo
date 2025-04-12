@@ -36,10 +36,6 @@ Atividade realizada pela platarforma [dbdiagram.io](https://dbdiagram.io/).
 
 Comandos utilizados para criação do DER, conforme [Docs dbdiagram](https://dbml.dbdiagram.io/docs)
 ```bash
-
-// Use DBML to define your database structure
-// Docs: https://dbml.dbdiagram.io/docs
-
 Table delegacia_policia {
   id_delegacia int PK
   cd_dp int [not null]
@@ -86,6 +82,4 @@ ref fk_d_o: delegacia_policia.id_delegacia < ocorrencia.id_delegacia // one-to-m
 ref fk_t_o : ocorrencia.id_tipo_ocorrencia - tipo_ocorrencia.id_tipo_ocorrencia // one-to-one
 ref fk_m_o : ocorrencia.id_municipio > municipio.id_municipio // many-to-one
 ref fk_d_m : delegacia_policia.id_municipio > municipio.id_municipio
-
-
 ```
