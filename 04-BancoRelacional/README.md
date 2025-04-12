@@ -10,12 +10,13 @@ Atividade realizada pela platarforma [BRModelo](https://app.brmodeloweb.com/).
 
 ---
 
-##### DER - Delegacia de Polícia
+###### DER - Delegacia de Polícia
 
 **Atividade proposta pelo professor *Claudio Bonel***
+
 Atividade realizada pela platarforma [dbdiagram.io](https://dbdiagram.io/).
 
-![DER](./docs/images/Delegecia de Polícia - DER.png)
+![DER](./docs/images/Delegacia_de Policia-DER.png)
 
 Comandos utilizados para criação do DER, conforme [Docs dbdiagram](https://dbml.dbdiagram.io/docs)
 ```bash
