@@ -16,7 +16,7 @@ Atividade realizada pela platarforma [BRModelo](https://app.brmodeloweb.com/).
 
 Atividade realizada pela platarforma [dbdiagram.io](https://dbdiagram.io/).
 
-![DER](./docs/images/Delegacia_de Policia-DER.png)
+![DER](./docs/images/Delegacia_de_Policia-DER.png)
 
 Comandos utilizados para criação do DER, conforme [Docs dbdiagram](https://dbml.dbdiagram.io/docs)
 ```bash
