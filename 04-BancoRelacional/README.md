@@ -3,6 +3,22 @@ Repositorio dedicado aos ensinamentos e exercícios praticados relacionados a ma
 
 ---
 
+###  História para os modelos:
+
+*Você foi convidado/a para realizar o projeto de banco de dados, de um software de inteligência de negócios, para Segurança Pública
+do Rio de Janeiro.
+Ao iniciar a reunião com o usuário do Instituto de Segurança Pública, ele falou sobre suas necessidades relacionadas a esta primeira
+entrega, onde é necessário ter os dados das Delegacias de Polícia, com o código da DP, o nome e endereço, bem como o responsável
+pela Delegacia, para esta última informação, por se um dado sensível de uma pessoa, deve ser tratado dentro do projeto com a devida
+atenção, portanto o cadastro das DPs NÃO deve contemplar nenhuma informação que os/as identifiquem, porém, esse cadastro de
+responsáveis deve-se relacionar a DP com o nome do/a Delegado/a responsável.
+Seguindo com sua explanação acerca das necessidades, alertou para importância de se obter dados dos nome dos municípios,
+segundo o seu código do IBGE, bem como a região para qual o munício pertence.
+Os dados das DPs e de região serão utilizados para mapearmos a quantidade de registros das ocorrências no estado do Rio de
+Janeiro através dos Anos, Meses e do tipo da ocorrência*
+
+--
+
 ###### MER-DelegaciaPolicia
 **Atividade proposta pelo professor *Claudio Bonel***
 Atividade realizada pela platarforma [BRModelo](https://app.brmodeloweb.com/).
