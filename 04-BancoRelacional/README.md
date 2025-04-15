@@ -91,7 +91,8 @@ ref fk_d_m : delegacia_policia.id_municipio > municipio.id_municipio
 **Atividade proposta pelo professor *Azriel Majdenbaum***
 
 Atividade realizada pela platarforma [livesql.oracle](https://livesql.oracle.com/).
-**Exercicio_criacao_tabela_oracle.png**
+
+**Exercicio_criacao_tabela_oracle**
 
 ![DER](./docs/images/exercicio_criacao_tabela_oracle.png)
 
