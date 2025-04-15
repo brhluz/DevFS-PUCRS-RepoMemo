@@ -86,7 +86,7 @@ ref fk_d_m : delegacia_policia.id_municipio > municipio.id_municipio
 
 ---
 
-###### DER - Delegacia de Polícia
+###### Relacionamentos do tipo muitos-para-muitos
 
 **Atividade proposta pelo professor *Azriel Majdenbaum***
 
