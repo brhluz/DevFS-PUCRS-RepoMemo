@@ -17,7 +17,7 @@ segundo o seu código do IBGE, bem como a região para qual o munício pertence.
 Os dados das DPs e de região serão utilizados para mapearmos a quantidade de registros das ocorrências no estado do Rio de
 Janeiro através dos Anos, Meses e do tipo da ocorrência*
 
---
+---
 
 ###### MER-DelegaciaPolicia
 **Atividade proposta pelo professor *Claudio Bonel***
@@ -88,7 +88,7 @@ ref fk_d_m : delegacia_policia.id_municipio > municipio.id_municipio
 
 ###### Relacionamentos do tipo muitos-para-muitos
 
-**Atividade proposta pelo professor *Azriel Majdenbaum***
+**Atividades propostas pelo professor *Azriel Majdenbaum***
 
 Atividade realizada pela platarforma [livesql.oracle](https://livesql.oracle.com/).
 
@@ -135,3 +135,44 @@ CREATE TABLE historico_consultas(
 );
 ```
 
+---
+
+**Exercicios SELECT Funções Agregadoras**
+
+Escreva comandos SELECT para as seguintes consultas:
+a) Quantos produtos existem na tabela PRODS?
+b) Quantos tipos de produtos existem na tabela PRODS?
+c) Quantos produtos existem de cada tipo?
+d) Qual a média de preço de todos os produtos?
+e) Qual a média de preço dos suprimentos (tipo ‘S’)?
+f) Qual a média de preço dos produtos de cada tipo?
+
+```bash
+-- a.
+SELECT COUNT(*)
+FROM PRODS;
+
+-- B.
+SELECT COUNT(DISTINCT P.TIPO)
+FROM PRODS P;
+
+-- C.
+SELECT P.TIPO, COUNT(*) qtd_produto
+FROM PRODS P
+GROUP BY P.TIPO;
+
+-- D.
+SELECT AVG(P.PRECO)
+FROM PRODS P;
+
+-- E.
+SELECT P.TIPO, AVG(P.PRECO)
+FROM PRODS P
+WHERE P.TIPO = 'S'
+GROUP BY P.TIPO;
+
+-- F.
+SELECT P.TIPO, AVG(P.PRECO)
+FROM PRODS P
+GROUP BY P.TIPO;
+```
