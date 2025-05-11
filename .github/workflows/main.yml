@@ -23,7 +23,7 @@ jobs:
           npm install
 
       - name: Execução do teste
-        run: mocha src/test/convert.js
+        run: mocha 03-DevOps_Basico/conversao-temperatura/src/test/convert.js
 
       - name: Construção da imagem Docker
       # You may pin to the exact commit or the version.
@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v6.16.0
         with:
           context: src
-          file: src/Dockerfile
+          file: 03-DevOps_Basico/conversao-temperatura/src/Dockerfile
           push: true
           tags: |
             brhluz/aula-conversao-temperatura:v1
