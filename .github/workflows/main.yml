@@ -23,7 +23,9 @@ jobs:
           npm install
 
       - name: Execução do teste
-        run: mocha 03-DevOps_Basico/conversao-temperatura/src/test/convert.js
+        run: |
+          cd 03-DevOps_Basico/conversao-temperatura/src
+          mocha test/convert.js
 
       - name: Construção da imagem Docker
       # You may pin to the exact commit or the version.
