@@ -44,5 +44,5 @@ jobs:
           file: 03-DevOps_Basico/conversao-temperatura/src/Dockerfile
           push: true
           tags: |
-            brhluz/aula-conversao-temperatura:v1
+            brhluz/aula-conversao-temperatura:${{github.run_number}}
             brhluz/aula-conversao-temperatura:latest
