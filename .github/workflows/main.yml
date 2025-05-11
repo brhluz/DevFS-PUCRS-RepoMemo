@@ -14,4 +14,9 @@ jobs:
         uses: actions/setup-node@v3.9.1
         with:
           node-version: 16.13.2
-    
+
+      - name: Instalação do Mocha para teste
+        run: |
+          cd src;
+          npm install -g mocha;
+          npm install
